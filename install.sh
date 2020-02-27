@@ -26,7 +26,7 @@ cd $baseDir
 wget http://gfw-breaker.win/videos/shenyun2020.mp4 
 
 for v in *.mp4; do
-	name=$(echo $v | cut -d '.')
+	name=$(echo $v | cut -d '.' -f1)
 	sed -e "s/#serverip#/$server_ip/g" \
 		-e "s/#video#/$v/g" template.html > $name.html
 done
