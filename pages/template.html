@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Title</title>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="https://cdn.bootcss.com/video.js/7.5.0/video.min.js"></script>
+<script src="https://cdn.bootcss.com/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script>
+<link rel='stylesheet' id='videojs-css' href='https://cdn.bootcss.com/video.js/7.5.0/video-js.min.css' type='text/css' media='all' />
+<style>
+a {
+	text-decoration: none;
+}
+h4 {
+	margin-top: 20px;
+}
+#player {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 100%;
+	max-width: 640px;
+	height: 360px;
+}
+.video-js .vjs-big-play-button{
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border-radius: 2.5em;
+}
+@media (max-width : 700px) {
+	#player {
+		height: 220px;
+	}
+}
+</style>
+</head>
+<body>
+<h4><center>Title</center></h4>
+<center>
+<video id=player class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" autoplay >
+  <source
+     src="http://#serverip#:88/hls/#video#/index.m3u8"
+     type="application/x-mpegURL">
+</video>
+<script>
+    var ua = navigator.userAgent.toLowerCase();
+    var isWeixin = ua.indexOf('micromessenger') != -1;
+	if (! isWeixin ) {
+    	document.getElementById("p").innerHTML="";
+	}
+</script>
+<script type="text/javascript">
+    var player = videojs('player');
+</script>
+
+</center>
+</body>
+</html>
+
+
