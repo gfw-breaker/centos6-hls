@@ -31,4 +31,5 @@ for v in *.mp4; do
 		-e "s/#video#/$v/g" template.html > $name.html
 done
 
+mv shenyun2020.html index.html
 
